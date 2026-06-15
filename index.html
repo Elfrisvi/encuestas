@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Encuentas</title>
+</head>
+<body>
+    <div class="contenedor-encuesta">
+    <h2>Encuesta de Probalidad</h2>
+    <p class="subtitulo">Por favor, tómate un minuto para responder las siguientes preguntas.</p>
+    
+    <form id="formulario-encuesta" method="post">
+        
+        <div class="grupo-control">
+            <label for="nombre">Nombre completo (Opcional):</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre...">
+        </div>
+
+        <div class="grupo-control">
+            <label for="CI">Cedula de identidad:</label>
+            <input type="text" id="CI" name="CI" placeholder="Número de cédula..."
+            pattern="\d{7,8}"
+            title="la cedula debe tener entre 7 y 8 numeros, sin letras ni guiones" pattern="\d{7,8}" required>
+        </div>
+
+        <div class="grupo-control">
+            <label for="carrera">Carrera universitaria:</label>
+            <div class="opciones">
+               <label for="Carrera">Carrera Universitaria</label>
+               <input type="text" id="carrera" name="carrera" placeholder="Tu carrera...">
+            </div>
+        </div>
+
+        <div class="grupo-control">
+            <div class="opciones">
+                <label for="semestre">Semestre</label>
+                <input type="number" id="semestre" name="semestre" placeholder="Tu semestre..." min="1" max="10">
+            </div>
+        </div>
+
+        <div class="grupo-control">
+            <label for="Situacion Laboral">Situación Laboral:</label>
+            <div class="opciones">
+                <label for="jornada">¿Trabajo actualmente a medio tiempo?</label>
+                <select id="jornada" name="jornada">
+                    <option value="">Selecciona una opción</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="bloque-extra-laboral" class="control-oculto">
+
+            <div class="grupo-control">
+             <label>Preguntas adicionales sobre tu situación laboral:</label>
+                <div class="opciones">
+             <label for="horas">¿Cuál es el promedio de horas de trabajo por semana?</label>
+             <select name="horas" id="horas">
+                <option value="">Selecciona una opción</option>
+                <option value="1-5">1-5 horas</option>
+                <option value="6-10">6-10 horas</option>
+                <option value="11-15">11-15 horas</option>
+                <option value="16+">16 horas o más</option>
+                 </select>
+                </div>
+            </div>
+
+            <div class="grupo-control">
+            <label>Horario de trabajo:</label>
+            <div class="opciones">
+                <label for="horario">¿En qué horario trabajas?</label>
+                <select name="horario" id="horario">
+                    <option value="">Selecciona una opción</option>
+                    <option value="matutino">Matutino</option>
+                    <option value="vespertino">Vespertino</option>
+                    <option value="nocturno">Nocturno</option>
+                    <option value="fines-de-semana">Fines de semana</option>
+                    <option value="rotativo">Rotativo</option>
+                </select>
+            </div>
+            </div>
+
+            <div class="grupo-control">
+            <label>Modalidad de trabajo:</label>
+            <div class="opciones">
+                <label for="modalidad">¿En qué modalidad trabajas?</label>
+                <select name="modalidad" id="modalidad">
+                    <option value="">Selecciona una opción</option>
+                    <option value="presencial">Presencial</option>
+                    <option value="remoto">Remoto</option>
+                    <option value="hibrido">Híbrido</option>
+                </select>
+            </div>
+        </div>
+
+    <div class="grupo-control">
+        <label>¿Has tenido que repetir o reprobar alguna materia desde que trabajas?</label>
+        <div class="opciones">
+            <label for="repetidas">¿Has tenido que repetir o reprobar alguna materia?</label>
+            <select name="repetidas" id="repetidas">
+                <option value="">Selecciona una opción</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+                <option value="no-aplica">No aplica</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="grupo-control">
+        <div class="opciones">
+            <label for="asistencia">¿Cómo describirías tu asistencia a clases desde que trabajas?</label>
+            <select name="asistencia" id="asistencia">
+                <option value="">Selecciona una opción</option>
+                <option value="siempre">Siempre asisto</option>
+                <option value="casi-siempre">Casi siempre asisto</option>
+                <option value="a-veces">A veces asisto</option>
+                <option value="rara-vez">Rara vez asisto</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="grupo-control">
+        <div class="opciones">
+            <label for="afecta">¿Cómo consideras que el trabajo afecta tu rendimiento académico?</label>
+            <select name="afecta" id="afecta">
+                <option value="">Selecciona una opción</option>
+                <option value="mucho">Mucho</option>
+                <option value="moderado">Moderado</option>
+                <option value="poco">Poco</option>
+                <option value="ninguno">Ninguno</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="grupo-control">
+        <div class="opciones">
+            <label for="afecta">¿Te alcanza el tiempo para dedicar a tus estudios o hacer tareas?</label>
+            <select name="afecta" id="afecta">
+                <option value="">Selecciona una opción</option>
+                <option value="mucho">Mucho</option>
+                <option value="moderado">Moderado</option>
+                <option value="poco">Poco</option>
+                <option value="ninguno">Ninguno</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="grupo-control">
+        <div class="opciones">
+            <label for="dificultades">¿Cual son tus mayores dificultades?</label>
+            <select name="dificultades" id="dificultades">
+                <option value="Tiempo">Falta de tiempo</option>
+                <option value="Cansancio">Cansancio fisico o mental</option>
+                <option value="Cruce">Cruce de horarios</option>
+                <option value="Ninguna">Ninguna</option>
+            </select>
+        </div>
+    </div>
+
+    </div>
+
+        <button type="submit" class="btn-enviar">Enviar Respuestas</button>
+
+    </form>
+<script src="javascript.js"></script>
+</div>
+</body>
+</html>

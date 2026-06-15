@@ -1,0 +1,167 @@
+
+:root {
+    --bg-principal: #f3f4f6;       /* Fondo de la página gris claro */
+    --bg-tarjeta: #ffffff;         /* Fondo blanco para la encuesta */
+    --color-primario: #2563eb;     /* Azul moderno para botones y bordes activos */
+    --color-primario-hover: #1d4ed8; /* Azul más oscuro al pasar el cursor */
+    --color-texto-dark: #1f2937;   /* Texto principal casi negro */
+    --color-texto-light: #4b5563;  /* Texto secundario gris */
+    --color-borde: #d1d5db;        /* Color de los bordes de inputs */
+    --bg-oculto: #f9fafb;          /* Fondo sutil para el bloque condicional */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-principal);
+    color: var(--color-texto-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px 15px;
+}
+
+
+.contenedor-encuesta {
+    background-color: var(--bg-tarjeta);
+    width: 100%;
+    max-width: 650px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 8px;
+    color: var(--color-texto-dark);
+}
+
+.subtitulo {
+    font-size: 14px;
+    text-align: center;
+    color: var(--color-texto-light);
+    margin-bottom: 35px;
+    line-height: 1.5;
+}
+
+
+.grupo-control {
+    margin-bottom: 24px;
+}
+
+
+.grupo-control > label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-texto-dark);
+}
+
+
+.opciones {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.opciones label {
+    font-size: 14px;
+    color: var(--color-texto-light);
+    margin-bottom: 6px;
+}
+
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 14px;
+    color: var(--color-texto-dark);
+    background-color: #ffffff;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+.control-oculto {
+    display: none; /* Tu JS se encargará de cambiar esto a 'block' */
+    background-color: var(--bg-oculto);
+    padding: 20px;
+    border-left: 4px solid var(--color-primario);
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 24px;
+    animation: desvanecer 0.3s ease-in-out;
+}
+
+
+@keyframes desvanecer {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.btn-enviar {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background-color: var(--color-primario);
+    color: #979393;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 15px;
+}
+
+.btn-enviar:hover {
+    background-color: var(--color-primario-hover);
+}
+
+.btn-enviar:active {
+    transform: scale(0.99); /* Efecto hundido al hacer click */
+}
+
+
+@media (max-width: 480px) {
+    .contenedor-encuesta {
+        padding: 20px 15px;
+    }
+    
+    h2 {
+        font-size: 22px;
+    }
+    
+    .control-oculto {
+        padding: 12px;
+    }
+}
