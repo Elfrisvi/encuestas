@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // 2. Aquí pegas la URL de pruebas que te dé tu amigo (o una de Webhook.site)
-        const urlServidor = 'https://encuesta-uni.onrender.com'; 
+        const urlServidor = 'https://encuesta-uni.onrender.com/encuesta'; 
 
         try {
             // 3. Enviamos la petición HTTP POST con el JSON en el cuerpo (body)
